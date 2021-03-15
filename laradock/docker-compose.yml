@@ -1,0 +1,46 @@
+version: "3"
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: ./docker/php-fpm/Dockerfile
+    volumes:
+      - ${APP_CODE_PATH_HOST}:/var/www/html/
+
+  php-fpm:
+    build:
+      context: .
+      dockerfile: ./docker/php-fpm/Dockerfile
+    ports:
+      - 9000:9000
+    volumes:
+      - ${APP_CODE_PATH_HOST}:/var/www/html/
+
+  nginx:
+    image: nginx:alpine
+    depends_on:
+      - php-fpm
+    ports:
+      - ${NGINX_PORT}:80
+    volumes:
+      - ${APP_CODE_PATH_HOST}:/var/www/html/
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+  wordpress:  # 管理者ユーザーはwp_user,hogehoge
+    image: wordpress:latest # MySQL5.7公式イメージを利用
+    ports:
+      - "3001:80" # ポート番号の設定
+    depends_on:
+      - mysql # mysqlを立ち上げた後にWordpressを立ち上げる
+    env_file: .env # 環境変数の定義に.envを利用
+    volumes:
+        - ./docker/wordpress:/var/www/html/
+
+  mysql:
+    image: mysql:5.7 # MySQL5.7公式イメージを利用
+    volumes:
+      - ${DATA_PATH_HOST}/data:/var/lib/mysql
+    env_file: .env # 環境変数の定義に.envを利用
+    ports:
+      - "3306:3306" #ポート番号の設定
