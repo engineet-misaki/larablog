@@ -4,18 +4,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                    <h3>About us</h3>
+                    <h3>About me</h3>
                     <p>
-                        We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
+                        I'm engineer working in Tokyo.  Devising ways to make money using IT and financial knowledge.
                     </p>
-                    <p>© Company Inc.</p>
+                    <p>© Engineer Inc.</p>
                 </div>
                 <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
                     <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-                    <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
-                    <p><i class="fab fa-skype"></i> Skype: you_online</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Make Form later</p>
+                    <p><i class="fas fa-phone"></i> Phone: secret</p>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="damy@gmail.com">damy@gmail.com</a></p>
+                    <p><i class="fab fa-skype"></i> Line: secret</p>
                 </div>
                 <div class="col-md-4 footer-links wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                     <div class="row">

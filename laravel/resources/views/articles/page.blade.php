@@ -3,7 +3,7 @@
 @section('title', 'インデックスページ')
 
 @include('layout.header')
-@include('layout.slider', ['data' => '一覧画面！！']))
+<!-- @include('layout.slider', ['data' => '一覧画面！！'])) -->
  
 @section('content')
 
