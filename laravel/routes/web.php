@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('articles.test');
+});
 
 Route::get('/blog', 'ArticleController@index');
 Route::get('/blog/{category}', 'ArticleController@list');
