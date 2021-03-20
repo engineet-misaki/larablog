@@ -1,27 +1,34 @@
 @extends('layout.common')
- 
+
 @section('title', 'インデックスページ')
 
 @include('layout.header')
-<!-- @include('layout.slider', ['data' => '一覧画面！！'])) -->
- 
+
 @section('content')
 
+<section class="fdb-block team-1" data-block-type="teams" data-id="5">
+    <div class="container">
+        <div class="row-50"></div>
 
-@foreach($articles as $article)
-    <div class="card d-inline-block m-3" style="width: 18rem;">
-        <img class = "bd-placeholder-img card-img-top" width="100%" height="180" src="https://picsum.photos/1201/400" alt="">
-        <div class="card-body">
-            <h5 class="card-title">{{ $article->post_title }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="http://localhost/blog/test/{{ $list[$loop->index] }}">{{ $article->post_title }}</a>
+        <div class="row">
+            @foreach($articles as $article)
+            <div class="col-sm-4 text-left mb-5">
+                <a href="http://localhost/blog/test/{{ $list[$loop->index] }}">
+                    <div class="fdb-box p-0">
+                        <img alt="image" class="img-fluid rounded-0" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//people/1.jpg">
+
+                        <div class="content p-4 pt-5">
+                            <h3><strong>{{ $article->post_title }}</strong></h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
         </div>
+
     </div>
-@endforeach
+</section>
 
-@endsection
- 
-@include('layout.submenu')
- 
+
 @include('layout.footer')
-
+@endsection

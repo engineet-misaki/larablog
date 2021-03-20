@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('articles.test');
-});
+// Route::get('/', function () {
+//     return view('articles.test');
+// });
 
+Route::get('/', 'ArticleController@index');
 Route::get('/blog', 'ArticleController@index');
 Route::get('/blog/{category}', 'ArticleController@list');
 Route::get('/blog/{category}/{article}', 'ArticleController@show');
