@@ -1414,6 +1414,7 @@ p {
 .fdb-block.fdb-image-bg {
     color: #f2f2f2;
 }
+/* ~~~~~~~~~追加~~~~~~~~~~ */
 .fdb-block .fdb-box {
     background: #fff;
     padding: 3.75rem 2.5rem;
@@ -1426,6 +1427,42 @@ p {
 .fdb-block .fdb-box:hover {
     transform:scale(1.1);
 }
+
+.fdb-block .fdb-box::before,
+.fdb-block .fdb-box::after {
+    position:absolute;
+    display:block;
+    box-sizing:border-box;
+    width:0;
+    height:0;
+    content:"";
+    opacity:0;
+    transition:width 0.3s, height 0.3s, opacity 0.3s;
+}
+.fdb-block .fdb-box::before {
+    top:0;
+    left:0;
+    border-top:5px solid #3f3f3f;
+    border-left:5px solid #3f3f3f;
+}
+
+.fdb-block .fdb-box::after {
+    right:0;
+    bottom:0;
+    border-right:5px solid #3f3f3f;
+    border-bottom:5px solid #3f3f3f;
+}
+
+.fdb-block .fdb-box:hover::before,
+.fdb-block .fdb-box:hover::after {
+    width:100%;
+    height:100%;
+    opacity:1;
+}
+
+
+/* ~~~~~~~~~追加~~~~~~~~~~ */
+
 .fdb-block .col-fill-left,
 .fdb-block .col-fill-right {
     width: 50%;

@@ -9,7 +9,7 @@
 
     <div class="container">
         <div class="border rounded-lg bg-light p-5 m-5">
-            <p class="">2021/03/20  以降に更新</p>
+            <p class="">{{ explode(" ", $articles->post_date)[0] }} 更新</p>
             <h1 class="">{{ $articles->post_title }}</h1>
             <div class="m-5">
                 <?php
