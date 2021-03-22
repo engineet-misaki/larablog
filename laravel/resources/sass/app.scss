@@ -216,6 +216,7 @@ body, html {
   body.fp-add-view [data-block-type] {
     user-select: none;
     position: relative;
+    transition:transform 0.3s;
   }
   body.fp-add-view section[data-block-type] {
     cursor: move;
@@ -228,6 +229,7 @@ body, html {
     right: 0;
     display: block;
     z-index: 10000;
+    transform:scale(1.1);
     content: "";
   }
   .fp-drop-placeholder {

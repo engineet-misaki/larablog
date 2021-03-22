@@ -6,7 +6,8 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/css/froala_blocks.min.css">
+<link rel="stylesheet" href="{{ asset('/css/froala.css') }}">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/css/froala_blocks.min.css"> -->
 
 </head>
 <body>
