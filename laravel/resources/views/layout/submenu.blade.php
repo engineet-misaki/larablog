@@ -1,5 +1,0 @@
-@section('submenu')
-
-
-
-@endsection

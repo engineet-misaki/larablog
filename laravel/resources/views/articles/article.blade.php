@@ -2,8 +2,7 @@
  
 @section('title', 'インデックスページ')
 
-@include('layout.header')
-<!-- @include('layout.slider', ['data' => $articles->post_title]) -->
+@include('layout.subheader')
  
 @section('content')
 
@@ -19,8 +18,6 @@
         </div>
     </div>
 @endsection
- 
-@include('layout.submenu')
  
 @include('layout.footer')
 

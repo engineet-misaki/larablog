@@ -13,7 +13,7 @@
         <div class="row">
             @foreach($articles as $article)
             <div class="col-sm-4 text-left mb-5">
-                <a href="{{ url('blog/test/' . $list[$loop->index] ) }}">
+                <a class="text-reset text-decoration-none" href="{{ url('blog/test/' . $list[$loop->index] ) }}">
                     <div class="fdb-box p-0">
                         <img alt="image" class="img-fluid rounded-0" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//people/1.jpg">
 

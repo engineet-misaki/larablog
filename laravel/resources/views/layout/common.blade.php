@@ -13,8 +13,7 @@
 <body>
  
 @yield('header')
-
-@yield('slider')
+@yield('subheader')
  
 @yield('content')
 

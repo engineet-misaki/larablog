@@ -15,22 +15,25 @@ class ArticleController extends Controller
                 ->where('taxonomy', 'post_tag');
             })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')->get();
 
-            $list = [];
-            foreach($articles as $article){
-                $id = $article->object_id;
-                $link = DB::table('wp_term_relationships')
-                    ->join('wp_term_taxonomy', function ($join){
-                        $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
-                        ->where('taxonomy','post_tag');
-                    })->join('wp_posts', function ($join) use($id){
-                        $join->on('wp_posts.ID', '=', 'wp_term_relationships.object_id')
-                        ->where('object_id', "$id");
-                    })->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
-                    ->first()->name;
-                array_push($list, $link);
-            }
-            // dd($articles);
-        return view('articles.page', compact('articles', 'list'));
+        $list = [];
+        foreach($articles as $article){
+            $id = $article->object_id;
+            $link = DB::table('wp_term_relationships')
+                ->join('wp_term_taxonomy', function ($join){
+                    $join->on('wp_term_relationships.term_taxonomy_id', '=', 'wp_term_taxonomy.term_taxonomy_id')
+                    ->where('taxonomy','post_tag');
+                })->join('wp_posts', function ($join) use($id){
+                    $join->on('wp_posts.ID', '=', 'wp_term_relationships.object_id')
+                    ->where('object_id', "$id");
+                })->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
+                ->first()->name;
+            array_push($list, $link);
+        }
+
+        $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
+            ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->get();
+        // dd($category_lists);
+        return view('articles.page', compact('articles', 'list', 'category_lists'));
     }
     //
     public function list($category){
@@ -56,8 +59,12 @@ class ArticleController extends Controller
                 ->first()->name;
             array_push($list, $link);
         }
+
+
+        $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
+            ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->get();
         // dd($articles);
-        return view('articles.page', compact('articles', 'list'));
+        return view('articles.page', compact('articles', 'list', 'category_lists'));
     }
     //
     public function show($category,$article){
@@ -70,6 +77,9 @@ class ArticleController extends Controller
             })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')->first();
         // dd($articles);
 
-        return view('articles.article', compact('articles'));
+        $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
+            ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->get();
+
+        return view('articles.article', compact('articles', 'category_lists'));
     }
 }

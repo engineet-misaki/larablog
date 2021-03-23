@@ -10,34 +10,23 @@
       </div>
     </div>
 
-    <div class="row text-center justify-content-center mt-5 pt-5">
-      <div class="col-12 col-sm-4 col-lg-3 m-md-auto">
-        <a href="{{ action('ArticleController@index') }}">
+    <div class="row text-center justify-content-center mt-5 pt-2">
+      <div class="col-12 col-sm-2 m-auto  pt-4 pt-sm-0">
+        <a class="text-decoration-none" href="{{ action('ArticleController@index') }}">
           <img alt="image" class="fdb-icon" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/monitor.svg">
-          <h3><strong>blog</strong></h3>
+          <h3><strong>HOME</strong></h3>
         </a>
       </div>
 
-      <div class="col-12 col-sm-4 col-lg-3 m-auto pt-4 pt-sm-0">
-        <a href="{{ action('ArticleController@list', 'test2') }}">
+      @foreach($category_lists as $category_list)
+      <div class="col-12 col-sm-2 m-auto pt-4 pt-sm-0">
+        <a class="text-decoration-none" href="{{ url('blog/' . $category_list->name ) }}">
           <img alt="image" class="fdb-icon" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/map.svg">
-          <h3><strong>test2</strong></h3>
+          <h3><strong>{{ $category_list->name }}</strong></h3>
         </a>
       </div>
+      @endforeach
 
-      <div class="col-12 col-sm-4 col-lg-3 m-auto pt-4 pt-sm-0">
-        <a href="{{ action('ArticleController@list', 'category') }}">
-          <img alt="image" class="fdb-icon" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/package.svg">
-          <h3><strong>category</strong></h3>
-        </a>
-      </div>
-
-      <div class="col-12 col-sm-4 col-lg-3 m-auto pt-4 pt-sm-0">
-        <a href="{{ action('ArticleController@list', 'hellow') }}">
-          <img alt="image" class="fdb-icon" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/package.svg">
-          <h3><strong>hellow</strong></h3>
-        </a>
-      </div>
     </div>
   </div>
 </section>
