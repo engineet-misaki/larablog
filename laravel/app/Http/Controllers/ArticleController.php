@@ -26,7 +26,7 @@ class ArticleController extends Controller
                     $join->on('wp_posts.ID', '=', 'wp_term_relationships.object_id')
                     ->where('object_id', "$id");
                 })->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
-                ->first()->slag;
+                ->first()->slug;
             array_push($list, $link);
         }
 
