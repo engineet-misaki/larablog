@@ -26,7 +26,7 @@ class ArticleController extends Controller
                     $join->on('wp_posts.ID', '=', 'wp_term_relationships.object_id')
                     ->where('object_id', "$id");
                 })->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
-                ->first()->name;
+                ->first()->slag;
             array_push($list, $link);
         }
 
@@ -56,7 +56,7 @@ class ArticleController extends Controller
                     $join->on('wp_posts.ID', '=', 'wp_term_relationships.object_id')
                     ->where('object_id', "$id");
                 })->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
-                ->first()->name;
+                ->first()->slug;
             array_push($list, $link);
         }
 
@@ -73,7 +73,7 @@ class ArticleController extends Controller
             ->join('wp_terms', function ($join)use ($article){
                 $join->on('wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
                 ->where('taxonomy','post_tag')
-                ->where('slug', "=", "%$article%");
+                ->where('slug', "=", "$article");
             })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')->first();
         // dd($articles);
 
