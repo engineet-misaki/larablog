@@ -31,7 +31,7 @@ class ArticleController extends Controller
         }
 
         $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
-            ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->get();
+        ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->orderBy('wp_terms.term_id', 'desc')->get();
         // dd($category_lists);
         return view('articles.page', compact('articles', 'list', 'category_lists'));
     }
@@ -42,7 +42,7 @@ class ArticleController extends Controller
             ->join('wp_terms', function ($join) use ($category){
                 $join->on('wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
                 ->where('taxonomy','category')
-                ->where('name', 'LIKE', "$category");
+                ->where('slug', '=', "$category");
             })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')->get();
 
         $list = [];
@@ -62,7 +62,7 @@ class ArticleController extends Controller
 
 
         $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
-            ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->get();
+        ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->orderBy('wp_terms.term_id', 'desc')->get();
         // dd($articles);
         return view('articles.page', compact('articles', 'list', 'category_lists'));
     }
@@ -73,12 +73,12 @@ class ArticleController extends Controller
             ->join('wp_terms', function ($join)use ($article){
                 $join->on('wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
                 ->where('taxonomy','post_tag')
-                ->where('name', "LIKE", "%$article%");
+                ->where('slug', "=", "%$article%");
             })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')->first();
         // dd($articles);
 
         $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
-            ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->get();
+        ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->orderBy('wp_terms.term_id', 'desc')->get();
 
         return view('articles.article', compact('articles', 'category_lists'));
     }

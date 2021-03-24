@@ -20,7 +20,7 @@
 
       @foreach($category_lists as $category_list)
       <div class="col-12 col-sm-2 m-auto pt-4 pt-sm-0">
-        <a class="text-decoration-none" href="{{ url('blog/' . $category_list->name ) }}">
+        <a class="text-decoration-none" href="{{ url('blog/' . $category_list->slug ) }}">
           <img alt="image" class="fdb-icon" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/map.svg">
           <h3><strong>{{ $category_list->name }}</strong></h3>
         </a>
