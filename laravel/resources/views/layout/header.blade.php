@@ -3,10 +3,10 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-12">
-        <h1>テストサイトだよおいしいよ</h1>
-        <h5 class="read">〜サブタイトルだぜ〜</h5>
-        <!-- <h1>金融カケルITエンジニア</h1>
-        <h5 class="read">〜お金を稼ぐ技術〜</h5> -->
+        <!-- <h1>テストサイトだよおいしいよ</h1>
+        <h5 class="read">〜サブタイトルだぜ〜</h5> -->
+        <h1>お金の知識 × ITエンジニア</h1>
+        <h5 class="read">〜お金を稼ぐ技術〜</h5>
       </div>
     </div>
 

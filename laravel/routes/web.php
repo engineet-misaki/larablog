@@ -15,7 +15,11 @@
 //     return view('articles.test');
 // });
 
+
 Route::get('/', 'ArticleController@index');
 Route::get('/blog', 'ArticleController@index');
 Route::get('/blog/{category}', 'ArticleController@list');
 Route::get('/blog/{category}/{article}', 'ArticleController@show');
+
+Route::get('/pay', 'PaymentController@show');
+Route::post('/pay', 'PaymentController@pay');
