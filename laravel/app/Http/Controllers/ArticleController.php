@@ -37,13 +37,18 @@ class ArticleController extends Controller
     }
     //
     public function list($category){
+        $tmp = "_thumbnail_id";
         $articles = DB::table('wp_term_relationships')
             ->join('wp_term_taxonomy', 'wp_term_taxonomy.term_taxonomy_id', '=', 'wp_term_relationships.term_taxonomy_id')
             ->join('wp_terms', function ($join) use ($category){
                 $join->on('wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
                 ->where('taxonomy','category')
                 ->where('slug', '=', "$category");
-            })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')->get();
+            })->join('wp_posts', 'wp_posts.ID', '=', 'wp_term_relationships.object_id')
+            ->join('wp_postmeta', function ($join) use ($tmp){
+                $join->on('wp_posts.ID', '=', 'wp_postmeta.post_id')
+                    ->where('meta_key','=', "$tmp");
+            })->get();
 
         $list = [];
         foreach($articles as $article){
@@ -59,12 +64,22 @@ class ArticleController extends Controller
                 ->first()->slug;
             array_push($list, $link);
         }
-
+        
+        $picture = [];
+        foreach($articles as $article){
+            $picture_id = $article->meta_value;
+            $picture_link = DB::table('wp_posts')
+                ->where("id", $picture_id)
+                ->first()->guid;
+            array_push($picture, $picture_link);
+        }
 
         $category_lists = DB::table('wp_term_taxonomy')->where('taxonomy', '=', 'category')
         ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->orderBy('wp_terms.term_id', 'desc')->get();
+        
+
         // dd($articles);
-        return view('articles.page', compact('articles', 'list', 'category_lists'));
+        return view('articles.page', compact('articles', 'list', 'category_lists', "picture"));
     }
     //
     public function show($category,$article){

@@ -15,7 +15,8 @@
             <div class="col-sm-4 text-left mb-5">
                 <a class="text-reset text-decoration-none" href="{{ url('blog/test/' . $list[$loop->index] ) }}">
                     <div class="fdb-box p-0">
-                        <img alt="image" class="img-fluid rounded-0" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//people/1.jpg">
+                        <!-- <img alt="image" class="img-fluid rounded-0" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//people/1.jpg"> -->
+                        <img width="100%" height="250" src="{{ $picture[$loop->index] }}" alt="" class="wp-image-10">
 
                         <div class="content p-4 pt-5">
                             <h3><strong>{{ $article->post_title }}</strong></h3>

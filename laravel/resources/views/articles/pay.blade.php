@@ -5,7 +5,7 @@
 @section('content')
 <div class="text-align-cneter m-5 p-5">
     <form action="{{ asset('pay') }}" method="POST">
-    {{ csrf_field() }}
+    @csrf
     <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="{{ config('tmp.PUBLISH_PASS') }}"
