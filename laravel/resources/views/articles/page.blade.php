@@ -6,7 +6,7 @@
 
 @section('content')
 
-<section class="fdb-block team-1" data-block-type="teams" data-id="5">
+<section class="fdb-block team-1 py-3" data-block-type="teams" data-id="5">
     <div class="container">
         <div class="row-50"></div>
 
