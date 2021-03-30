@@ -1,7 +1,6 @@
 @section('footer')
 <section class="fdb-block pt-0 fp-active" data-block-type="contacts" data-id="6">
     <div class="container-fluid p-0 pb-3">
-        <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8444388087937!2d26.101253041406952!3d44.43635311654287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4770adb5b7%3A0x58147f39579fe6fa!2zR3J1cHVsIFN0YXR1YXIgIkPEg3J1yJthIEN1IFBhaWHIm2Ui!5e0!3m2!1sen!2sro!4v1507381157656" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe> -->
         <img width="100%" height="300" src="https://picsum.photos/1201/400" alt="">
     </div>
     <div class="container">
@@ -46,19 +45,16 @@
             <div class="row-50"></div>
             <div class="row justify-content-center text-center">
                 <div class="col-12 col-md mr-auto ml-auto">
-                    <!-- <img alt="image" height="40" class="mb-2" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/phone.svg"> -->
-                    <i class="fab fa-3x fa-github"></i>
-                    <p class="lead pt-1">LINE</p>
+                    <img height="50" src="https://qr-official.line.me/sid/L/448ngcze.png" class="qrcode">
+                    <p class="lead pt-1 mt-0">LINE</p>
                 </div>
 
                 <div class="col-12 col-md pt-3 pt-md-0 mr-auto ml-auto">
-                    <!-- <img alt="image" height="40" class="mb-2" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/navigation.svg"> -->
                     <i class="fas fa-3x fa-map-marked-alt"></i>
                     <p class="lead pt-1">Japan Kanagawa</p>
                 </div>
 
                 <div class="col-12 col-md pt-3 pt-md-0 mr-auto ml-auto">
-                    <!-- <img alt="image" height="40" class="mb-2" src="https://cdn.jsdelivr.net/gh/froala/design-blocks@master/dist/imgs//icons/mail.svg"> -->
                     <i class="fas fa-3x fa-envelope"></i>
                     <p class="lead pt-1">test@website.com</p>
                 </div>
