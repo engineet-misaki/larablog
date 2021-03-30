@@ -1,7 +1,7 @@
 @section('subheader')
 <section class="fdb-block  py-0" data-block-type="features" data-id="3">
     <div class="bg-dark">
-    <h3 class="text-center py-2 m-0">〜サイトカテゴリ〜</h3>
+    <h5 class="text-center py-3 m-0"></h5>
     <div class="container">
     <div class="row text-center justify-content-center">
       <div class="col-12 col-sm-2 m-auto  pt-4 pt-sm-0">
