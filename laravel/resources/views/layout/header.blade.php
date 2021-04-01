@@ -12,7 +12,7 @@
       <div class="col-xs-2 m-auto pt-0">
         <a class="text-decoration-none text-reset" href="{{ action('ArticleController@index') }}">
           <i class="fas fa-home fa-4x text-muted"></i>
-          <h3><strong class="text-muted">HOME</strong></h3>
+          <h6><strong class="text-muted">HOME</strong></h6>
         </a>
       </div>
 
@@ -20,7 +20,7 @@
       <div class="col-xs-2 m-auto pt-0">
         <a class="text-decoration-none text-reset" href="{{ url('blog/' . $category_list->slug ) }}">
           <i class="{{  $icon[$loop->index] }} fa-4x  text-muted"></i>
-          <h3><strong class="text-muted">{{ $category_list->name }}</strong></h3>
+          <h6><strong class="text-muted">{{ $category_list->name }}</strong></h6>
         </a>
       </div>
       @endforeach
