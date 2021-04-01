@@ -6,9 +6,9 @@
 
 @section('content')
 
-<section class="fdb-block team-1 py-3" data-block-type="teams" data-id="5">
+<section class="fdb-block team-1 py-md-3 py-0" data-block-type="teams" data-id="5">
     <div class="container">
-        <div class="row-50"></div>
+        <div class="row"></div>
 
         <div class="row">
             @foreach($articles as $article)
