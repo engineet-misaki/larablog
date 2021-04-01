@@ -6,8 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title')</title>
 
-<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('/css/froala.css') }}">
+<link href="{{ asset('/css/app.css?' . date('Ymd-His')) }}" rel="stylesheet">
 <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
 
 

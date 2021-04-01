@@ -11,7 +11,7 @@
     <div class="row text-center justify-content-center py-4 pt-md-5">
       <div class="col-xs-2 m-auto pt-0">
         <a class="text-decoration-none text-reset" href="{{ action('ArticleController@index') }}">
-          <i class="fas fa-home fa-3x text-muted"></i>
+          <i class="fas fa-home text-muted vw-3"></i>
           <h6><strong class="text-muted">HOME</strong></h6>
         </a>
       </div>
@@ -19,7 +19,7 @@
       @foreach($category_lists as $category_list)
       <div class="col-xs-2 m-auto pt-0">
         <a class="text-decoration-none text-reset" href="{{ url('blog/' . $category_list->slug ) }}">
-          <i class="{{  $icon[$loop->index] }} fa-3x  text-muted"></i>
+          <i class="{{  $icon[$loop->index] }}  text-muted vw-3"></i>
           <h6><strong class="text-muted">{{ $category_list->name }}</strong></h6>
         </a>
       </div>
