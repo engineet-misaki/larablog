@@ -18,7 +18,7 @@
                         <img width="100%" height="250" src="{{ $picture[$loop->index] }}" alt="" class="wp-image-10">
 
                         <div class="content p-4 pt-5">
-                            <h3><strong>{{ $article->post_title }}</strong></h3>
+                            <h3>{{ $article->post_title }}</h3>
                         </div>
                     </div>
                 </a>
