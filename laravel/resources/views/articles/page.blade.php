@@ -17,7 +17,7 @@
                     <div class="fdb-box p-0">
                         <img width="100%" height="250" src="{{ $picture[$loop->index] }}" alt="" class="wp-image-10">
 
-                        <div class="content p-4 pt-5">
+                        <div class="content p-4">
                             <h3>{{ $article->post_title }}</h3>
                         </div>
                     </div>

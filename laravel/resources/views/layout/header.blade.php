@@ -12,7 +12,7 @@
       <div class="col-xs-2 m-auto pt-0">
         <a class="text-decoration-none text-reset" href="{{ action('ArticleController@index') }}">
           <i class="fas fa-home text-muted vw-5"></i>
-          <h6 class="text-muted m-d-1  vw-1">HOME</h6>
+          <h6 class="text-muted m-md-1 vw-1">HOME</h6>
         </a>
       </div>
 
