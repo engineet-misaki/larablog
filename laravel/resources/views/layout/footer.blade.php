@@ -1,7 +1,8 @@
 @section('footer')
 <section class="fdb-block pt-0 fp-active" data-block-type="contacts" data-id="6">
     <div class="container-fluid p-0 pb-3">
-        <img width="100%" height="300" src="https://picsum.photos/1201/400" alt="">
+        <img class = "d-none d-md-block" width="100%" height="300" src="https://picsum.photos/1201/400" alt="">
+        <img class="d-block d-md-none" width="100%" height="100" src="https://picsum.photos/1200/400" alt="">
     </div>
     <div class="container">
         <div class="row text-center justify-content-center pt-5">
@@ -38,7 +39,7 @@
                 </form>
             </div>
         </div>
-        <div class="row-100"></div>
+        <div class="row-100 d-none d-md-block"></div>
     </div>
     <div class="bg-dark">
         <div class="container">
