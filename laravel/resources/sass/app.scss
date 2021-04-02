@@ -18,8 +18,24 @@ body, html {
   font-size: 5vw;
 }
 .vw-1 {
-  font-size: 1vw;
+  font-size: 16px;
 }
+@media (min-width: 640px) {
+  .vw-1{
+    font-size: 1vw
+    // font-size: calc(16px + ((1vw - 6.4px)*3.571));
+  }
+  // .vw-5{
+  //   font-size: 5vw
+  //   // font-size: calc(16px + ((1vw - 6.4px)*3.571));
+  // }
+}
+@media (min-width: 1200px) {
+  .vw-5{
+    font-size: 50px;
+  }
+}
+
 
 h1,
 h2,

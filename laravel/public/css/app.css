@@ -12541,7 +12541,19 @@ html {
 }
 
 .vw-1 {
-  font-size: 1vw;
+  font-size: 16px;
+}
+
+@media (min-width: 640px) {
+  .vw-1 {
+    font-size: 1vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .vw-5 {
+    font-size: 50px;
+  }
 }
 
 h1,
