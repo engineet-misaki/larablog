@@ -12569,3 +12569,15 @@ h6 {
   color: inherit;
 }
 
+.prof-img {
+  position: relative;
+}
+
+.prof-text {
+  position: absolute;
+  top: 120;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+

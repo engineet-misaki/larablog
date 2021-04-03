@@ -36,7 +36,6 @@ body, html {
   }
 }
 
-
 h1,
 h2,
 h3,
@@ -48,4 +47,16 @@ h6 {
     font-weight: 600;
     line-height: 1.5;
     color: inherit;
+}
+
+.prof-img {
+  position: relative;
+}
+
+.prof-text {
+  position: absolute;
+  top: 120;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
