@@ -13,7 +13,7 @@
         <div class="row">
             @foreach($articles as $article)
             <div class="col-sm-4 text-left mb-5">
-                <a class="text-reset text-decoration-none" href="{{ url('blog/test/' . $list[$loop->index] ) }}">
+                <a class="text-reset text-decoration-none" href="{{ url('blog/test/' . $list[$loop->index], $secure = true ) }}">
                     <div class="fdb-box p-0">
                         <img width="100%" height="250" src="{{ $picture[$loop->index] }}" alt="" class="wp-image-10">
 
