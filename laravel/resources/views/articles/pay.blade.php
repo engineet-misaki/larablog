@@ -4,7 +4,7 @@
  
 @section('content')
 <div class="text-align-cneter m-5 p-5">
-    <form action="{{ asset('pay') }}" method="POST">
+    <form action="{{ secure_asset('pay') }}" method="POST">
     @csrf
     <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -19,7 +19,7 @@
     </script>
     </form>
 </div>
-<form action="{{ asset('pay') }}" method="POST">
+<form action="{{ secure_asset('pay') }}" method="POST">
 
 @endsection
  

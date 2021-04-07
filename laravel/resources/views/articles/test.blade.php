@@ -1,7 +1,7 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<form action="{{ asset('pay') }}" method="POST">
+<form action="{{ secure_asset('pay') }}" method="POST">
     {{ csrf_field() }}
  <script
      src="https://checkout.stripe.com/checkout.js" class="stripe-button"

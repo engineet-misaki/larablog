@@ -7,7 +7,7 @@
 <title>@yield('title')</title>
 
 <!-- 開発用 -->
-<link href="{{ asset('/css/app.css?' . date('Ymd-His')) }}" rel="stylesheet">
+<link href="{{ secure_asset('/css/app.css?' . date('Ymd-His')) }}" rel="stylesheet">
 <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
 
 
@@ -21,6 +21,6 @@
 
 @yield('footer')
  
-<script src="{{ asset('/js/app.js') }}"></script>
+<script src="{{ secure_asset('/js/app.js') }}"></script>
 </body>
 </html>
