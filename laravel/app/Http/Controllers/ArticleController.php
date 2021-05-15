@@ -47,7 +47,7 @@ class ArticleController extends Controller
             array_push($picture, $picture_link);
         }
 
-        $icon = ["fas fa-coins", "fab fa-bitcoin", "fas fa-cogs", "fas fa-code", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs"];
+        $icon = ["fas fa-coins", "fas fa-cogs", "fab fa-bitcoin", "fas fa-code", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs"];
         // dd($category_lists);
         return view('articles.page', compact('articles', 'list', 'category_lists', 'picture', 'icon'));
     }
@@ -94,7 +94,7 @@ class ArticleController extends Controller
         ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->orderBy('wp_terms.term_id', 'desc')->get();
         
 
-        $icon = ["fas fa-coins", "fab fa-bitcoin", "fas fa-cogs", "fas fa-code", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs"];
+        $icon = ["fas fa-coins", "fas fa-cogs", "fab fa-bitcoin", "fas fa-code", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs"];
         // dd($articles);
         return view('articles.page', compact('articles', 'list', 'category_lists', "picture", "icon"));
     }
@@ -113,7 +113,7 @@ class ArticleController extends Controller
         ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')->orderBy('wp_terms.term_id', 'desc')->get();
 
 
-        $icon = ["fas fa-coins", "fab fa-bitcoin", "fas fa-cogs", "fas fa-code", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs"];
+        $icon = ["fas fa-coins", "fas fa-cogs", "fab fa-bitcoin", "fas fa-code", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs", "fas fa-cogs"];
 
         return view('articles.article', compact('articles', 'category_lists', 'icon'));
     }
